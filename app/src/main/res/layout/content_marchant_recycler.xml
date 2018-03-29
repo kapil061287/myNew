@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="?android:attr/selectableItemBackground"
+    android:layout_height="wrap_content"
+    android:translationZ="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="80dp"
+        android:padding="5dp"
+        android:background="@drawable/image_backgroud_logo"
+        android:id="@+id/restaurant_image_marchant_list"
+        android:layout_height="60dp" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center_vertical"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:text="Hormal Food"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:id="@+id/rastaurant_name_marchant_rec"
+            android:textSize="15dp"
+            android:fontFamily="@font/open_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <android.support.v7.widget.AppCompatRatingBar
+            android:layout_width="wrap_content"
+            android:id="@+id/rating_bar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:text="Indian"
+            android:fontFamily="@font/open_sans"
+            android:textSize="13dp"
+            android:textColor="#ff333333"
+            android:id="@+id/rastaurant_cuisine_marchant_rec"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:text="Shop No.19, E Block Market, Sector 3"
+            android:textSize="12dp"
+            android:textColor="#FF444444"
+            android:id="@+id/address_marchant_rec"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content" />
+<LinearLayout
+    android:orientation="horizontal"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="Delivery"
+        android:fontFamily="@font/open_sans"
+        android:visibility="gone"
+        android:drawableRight="@drawable/ic_check_black_24dp"
+        android:layout_width="wrap_content"
+        android:id="@+id/delivery_marchant"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:visibility="gone"
+        android:layout_marginLeft="15dp"
+        android:text="Pickup"
+        android:fontFamily="@font/open_sans"
+        android:id="@+id/pickup_marchant"
+        android:drawableRight="@drawable/ic_check_black_24dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+
+
+    </LinearLayout>
+<TextView
+    android:text="Open"
+
+    android:background="@drawable/open_draw"
+    android:textColor="#ffffffff"
+    android:fontFamily="@font/open_sans"
+    android:layout_marginRight="15dp"
+    android:layout_width="60dp"
+    android:gravity="center_horizontal|center_vertical"
+    android:layout_height="wrap_content" />
+</LinearLayout>

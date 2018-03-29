@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.depex.eatasmuch.user.screens.SignUpActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="334dp"
+        android:layout_height="411dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Name"
+            android:fontFamily="@font/open_sans"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Last Name"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Mobile"
+            android:fontFamily="@font/open_sans"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Email"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Password"
+            android:fontFamily="@font/open_sans"
+            android:inputType="textPassword"
+            android:paddingLeft="10dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="@string/confirm_password"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/input_background"
+            android:layout_marginEnd="@dimen/margin_right_input"
+            android:layout_marginStart="@dimen/margin_left_input"
+            android:paddingStart="10dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
+            android:backgroundTint="@color/colorPrimary"
+            android:textColor="@color/text_color_dark_back"
+            android:text="Join eat as much"
+            android:background="@drawable/input_background"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.depex.eatasmuch.user.screens.LoginActivity">
+
+
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="410dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/logo1" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:hint="Email"
+            android:paddingLeft="10dp"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:background="@drawable/input_background" />
+
+        <EditText
+            android:hint="Password"
+            android:fontFamily="@font/open_sans"
+            android:paddingLeft="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:inputType="textPassword"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:background="@drawable/input_background" />
+        <Button
+            android:background="@drawable/input_background"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/text_color_dark_back"
+            android:text="Sign In"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:background="@drawable/input_background"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
+            android:textColor="@color/text_color_dark_back"
+            android:text="New User"
+            android:id="@+id/signup_up"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:background="#00ffffff"
+            android:textColor="@color/colorPrimary"
+            android:text="Forget Password?"
+            android:layout_gravity="right"
+            android:layout_marginLeft="@dimen/margin_left_input"
+            android:fontFamily="@font/open_sans"
+            android:layout_marginRight="@dimen/margin_right_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

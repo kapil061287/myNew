@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+   <item android:title="@string/address_book"
+       android:id="@+id/address_book_menu"/>
+    <item android:title="@string/order_history"
+        android:id="@+id/order_history_menu"/>
+    <item android:title="@string/payment_details"
+        android:id="@+id/payment_details"/>
+
+    <item android:title="@string/login"
+        android:id="@+id/signup_menu"
+        />
+    <item android:title="@string/send_feedback"
+        android:id="@+id/send_feedback_menu"/>
+
+    <item android:id="@+id/help_center_menu"
+        android:title="@string/help_center"/>
+
+</menu>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#c91104</color>
+    <color name="colorPrimaryDark">#900000</color>
+    <color name="colorAccent">#fa9e00</color>
+    <color name="text_color_dark_back">#ffffffff</color>
+    <color name="back_color">#33000000</color>
+    <color name="conneced">#ff04731c</color>
+
+    <color name="disconnected">@color/colorPrimaryDark</color>
+    <color name="color_gray">#FFAAAAAA</color>
+    <color name="colorSuccess">#FF28a643</color>
+    <color name="gray_70">#b7b4b4</color>
+    <color name="background_color">#FFFF0000</color>
+    <color name="transparent">#00FFFFFF</color>
+</resources>
