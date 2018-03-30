@@ -63,7 +63,7 @@
         android:text="Delivery"
         android:fontFamily="@font/open_sans"
         android:visibility="gone"
-        android:drawableRight="@drawable/ic_check_black_24dp"
+        android:drawableRight="@drawable/right_icon_layer_list"
         android:layout_width="wrap_content"
         android:id="@+id/delivery_marchant"
         android:layout_height="wrap_content" />
@@ -73,7 +73,7 @@
         android:text="Pickup"
         android:fontFamily="@font/open_sans"
         android:id="@+id/pickup_marchant"
-        android:drawableRight="@drawable/ic_check_black_24dp"
+        android:drawableRight="@drawable/right_icon_layer_list"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </LinearLayout>
@@ -82,7 +82,6 @@
     </LinearLayout>
 <TextView
     android:text="Open"
-
     android:background="@drawable/open_draw"
     android:textColor="#ffffffff"
     android:fontFamily="@font/open_sans"

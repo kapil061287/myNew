@@ -4,10 +4,14 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+import com.depex.eatasmuch.user.model.ShoppingCart;
+
 
 public class Utils {
     public static final String SITE_URL="http://dialupagengy.biz/eat_as_much/api/";
     public static final String SITE_PREF="eat_as_much_pref";
+    public static final String IS_FOOD_ITEM_FRAGMENT_IN_FORGROUD = "isFoodItemFragmentInForground";
+    public static ShoppingCart shoppingCart=new ShoppingCart();
 
     public static String confirtStringProperFormat(String itemName) {
         StringBuilder sb=new StringBuilder();

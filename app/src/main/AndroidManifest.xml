@@ -47,6 +47,10 @@
         <activity
             android:name=".screens.FoodOrderCartActivity"
             android:label="@string/title_activity_food_order_cart"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".screens.ShoppingCartActivity"
+            android:label="@string/title_activity_shopping_cart"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

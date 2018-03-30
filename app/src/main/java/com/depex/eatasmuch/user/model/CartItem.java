@@ -6,6 +6,15 @@ public class CartItem {
     private int quantity;
     //for Full or Half
     private float price;
+    private String size=new String();
+
+    public String getSize() {
+        return size;
+    }
+
+    public void setSize(String size) {
+        this.size = size;
+    }
 
     public FoodItem getFoodItem() {
         return foodItem;
@@ -32,22 +41,34 @@ public class CartItem {
     }
 
     public void quantityIncrement(){
+            quantity++;
+    }
 
+    public void quantityDecrement(){
+        quantity--;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         CartItem cartItem = (CartItem) o;
-        if (Float.compare(cartItem.price, price) != 0) return false;
+
         return foodItem != null ? foodItem.equals(cartItem.foodItem) : cartItem.foodItem == null;
     }
 
     @Override
     public int hashCode() {
-        int result = foodItem != null ? foodItem.hashCode() : 0;
-        result = 31 * result + (price != +0.0f ? Float.floatToIntBits(price) : 0);
-        return result;
+        return foodItem != null ? foodItem.hashCode() : 0;
+    }
+
+    @Override
+    public String toString() {
+        return "CartItem{" +
+                "foodItem=" + foodItem +
+                ", quantity=" + quantity +
+                ", price=" + price +
+                '}';
     }
 }

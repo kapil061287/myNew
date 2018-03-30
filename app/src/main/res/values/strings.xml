@@ -23,5 +23,7 @@
     <string name="title_activity_food_order_cart">FoodOrderCartActivity</string>
     <string name="add_to_cart">Add To Cart</string>
     <string name="shopping_cart">Shopping Cart</string>
+    <string name="title_activity_shopping_cart">ShoppingCartActivity</string>
+    <string name="category_desc">Here is category description for customer. customer can watch what he order.</string>
 
 </resources>

@@ -1,7 +1,11 @@
 package com.depex.eatasmuch.user.screens;
 
+import android.app.AlertDialog;
+import android.app.FragmentManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.LayerDrawable;
@@ -29,17 +33,26 @@ import com.depex.eatasmuch.user.R;
 import com.depex.eatasmuch.user.drawable.CountDrawable;
 import com.depex.eatasmuch.user.fragment.MarchantListFragment;
 import com.depex.eatasmuch.user.utils.UtilMethods;
+import com.depex.eatasmuch.user.utils.Utils;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class NavigationActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener {
+
+    SharedPreferences preferences;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navigation);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
+        preferences=getSharedPreferences(Utils.SITE_PREF, MODE_PRIVATE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,8 +93,36 @@ public class NavigationActivity extends AppCompatActivity
             if(fragmentCount==1){
                 finish();
             }else {
-                super.onBackPressed();
+                showAlertForFoodItemFragment();
             }
+        }
+    }
+
+    private void showAlertForFoodItemFragment() {
+        if(!preferences.getBoolean(Utils.IS_FOOD_ITEM_FRAGMENT_IN_FORGROUD, false)){
+            super.onBackPressed();
+        }else {
+                showAlert();
+        }
+    }
+    public void showAlert(){
+        AlertDialog.Builder cartClearDialog=new AlertDialog.Builder(this);
+        cartClearDialog.setTitle("Cart will be Cleared!");
+        cartClearDialog.setMessage("There are item in your cart. if you proceed, your items will be cleared.");
+        cartClearDialog.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                Utils.shoppingCart.clear();
+                UtilMethods.setCount(NavigationActivity.this, String.valueOf(Utils.shoppingCart.getTotalCartItemCount()), toolbar.getMenu());
+                NavigationActivity.super.onBackPressed();
+            }
+        });
+        cartClearDialog.setNegativeButton("Cancel", null);
+
+        if(Utils.shoppingCart.getTotalCartItemCount()>0){
+            cartClearDialog.create().show();
+        }else {
+            super.onBackPressed();
         }
     }
 
@@ -90,10 +131,7 @@ public class NavigationActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.navigation, menu);
-
-
-        UtilMethods.setCount(this, "0", menu);
-
+        UtilMethods.setCount(this, String.valueOf(Utils.shoppingCart.getShoppingCartItemCount()), menu);
         return true;
     }
 
@@ -104,13 +142,20 @@ public class NavigationActivity extends AppCompatActivity
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
+        switch (item.getItemId()){
+            case R.id.shopping_cart_menu:
+                    openShoppingCart();
+                break;
+        }
 
         //noinspection SimplifiableIfStatement
 
-
         return super.onOptionsItemSelected(item);
+    }
+
+    private void openShoppingCart() {
+        Intent intent=new Intent(this, ShoppingCartActivity.class);
+        startActivity(intent);
     }
 
     private void startLoginActivity() {
@@ -129,7 +174,7 @@ public class NavigationActivity extends AppCompatActivity
                 break;
         }
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer =  findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
@@ -147,4 +192,5 @@ public class NavigationActivity extends AppCompatActivity
         Intent myProfileIntent=new Intent(this , UserProfileActivity.class);
         startActivity(myProfileIntent);
     }
+
 }

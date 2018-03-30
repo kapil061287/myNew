@@ -26,7 +26,6 @@ import java.util.List;
 public class UtilMethods {
 
     public static void registerNetworkReceiver(NetworkReceiver receiver, Context context) {
-
         IntentFilter filter=new IntentFilter();
         filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         filter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
@@ -97,14 +96,15 @@ public class UtilMethods {
                 .commit();
     }
 
-
     public static void setCount(Context context, String count, Menu menu) {
         MenuItem menuItem = menu.findItem(R.id.shopping_cart_menu);
         if(count.equalsIgnoreCase("0")){
             menuItem.setVisible(false);
+        }else {
+            menuItem.setVisible(true);
         }
         LayerDrawable icon = (LayerDrawable) menuItem.getIcon();
-        menuItem.setVisible(false);
+
         CountDrawable badge;
 
         // Reuse drawable if possible
@@ -119,4 +119,5 @@ public class UtilMethods {
         icon.mutate();
         icon.setDrawableByLayerId(R.id.ic_group_count, badge);
     }
+
 }

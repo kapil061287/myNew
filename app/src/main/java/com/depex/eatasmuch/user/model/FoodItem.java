@@ -1,5 +1,6 @@
 package com.depex.eatasmuch.user.model;
 
+import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Map;
@@ -194,20 +195,7 @@ public class FoodItem  {
 
     @Override
     public String toString() {
-        return "FoodItem{" +
-                "itemId='" + itemId + '\'' +
-                ", marchantId='" + marchantId + '\'' +
-                ", itemName='" + itemName + '\'' +
-                ", itemDescription='" + itemDescription + '\'' +
-                ", status='" + status + '\'' +
-                ", price='" + price + '\'' +
-                ", photo='" + photo + '\'' +
-                ", sequence='" + sequence + '\'' +
-                ", notAvailable='" + notAvailable + '\'' +
-                ", gallaryPhoto='" + gallaryPhoto + '\'' +
-                ", isVeg='" + isVeg + '\'' +
-                ", priceMap=" + priceMap +
-                ", foodPrice='" + foodPrice + '\'' +
-                '}';
+        Gson gson=new Gson();
+        return gson.toJson(this);
     }
 }
